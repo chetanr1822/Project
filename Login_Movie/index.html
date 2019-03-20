@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <!-- There is some issue while loading css file, so I am adding it in html -->
+        <link rel="stylesheet" href="/css/main.css">
+        <style>
+
+        * {
+          margin: 0px;
+          padding: 0px;
+          box-sizing: border-box;
+        }
+
+        body, html {
+          height: 100%;
+          font-family: OpenSans-Regular, sans-serif;
+        }
+
+        /*---------------------------------------------*/
+        a {
+          font-family: OpenSans-Regular;
+          font-size: 14px;
+          line-height: 1.7;
+          color: #666666;
+          margin: 0px;
+        }
+
+        a:focus {
+          outline: none !important;
+        }
+
+        a:hover {
+          text-decoration: none;
+        }
+
+        /*---------------------------------------------*/
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          transition: 0.3s;
+          width: 40%;
+          margin-top: 40px;
+          display: flex;
+        }
+
+        .movie-image {
+            width: 55%;
+        }
+
+        .card:hover {
+          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        .container {
+          padding: 2px 16px;
+        }
+
+        .catagary {
+          display: flex;
+          margin-top: 2%;
+        }
+        .rating-header {
+          margin-top: 4%;
+          font-family: OpenSans-Regular;
+          font-size: 21px;
+          color: #555555;
+        }
+        .range-bar {
+          width: 50% !important;
+          margin-top: 2%;
+        }
+        .catagary-box {
+          width: 19%;
+          padding: 25px;
+          box-sizing: border-box;
+          height: 40px;
+          border: 0.3px solid #555555;
+          margin-right: 15px;
+          text-align: center;
+          vertical-align: middle;
+          line-height: 3px;
+          font-family: OpenSans-Regular;
+          font-size: 17px;
+          color: #555555;
+        }
+        .catagary-box:hover {
+          cursor: pointer;
+        }
+        .catagary-box-select {
+          background-color: blue;
+          color:white;
+        }
+        .card-property {
+          margin-bottom: 9px; 
+        }
+
+        /*---------------------------------------------*/
+        h1,h2,h3,h4,h5,h6 {
+          margin: 0px;
+        }
+
+        p {
+          font-family: OpenSans-Regular;
+          font-size: 14px;
+          line-height: 1.7;
+          color: #666666;
+          margin: 0px;
+        }
+
+        ul, li {
+          margin: 0px;
+          list-style-type: none;
+        }
+
+        /*---------------------------------------------*/
+        input {
+          outline: none;
+          border: none;
+        }
+
+        textarea {
+          outline: none;
+          border: none;
+        }
+
+        textarea:focus, input:focus {
+          border-color: transparent !important;
+        }
+
+        /*---------------------------------------------*/
+        button {
+          outline: none !important;
+          border: none;
+          background: transparent;
+        }
+
+        button:hover {
+          cursor: pointer;
+        }
+
+        /*//////////////////////////////////////////////////////////////////
+        [ Utility ]*/
+        .txt1 {
+          font-family: OpenSans-Regular;
+          font-size: 15px;
+          line-height: 1.4;
+          color: #999999;
+        }
+
+        .txt2 {
+          font-family: OpenSans-Regular;
+          font-size: 15px;
+          line-height: 1.4;
+          color: #4272d7;
+        }
+
+        .hov1:hover {
+          text-decoration: underline;
+        }
+
+        /*//////////////////////////////////////////////////////////////////
+        [ login ]*/
+
+        .limiter {
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        .container-login100 {
+          width: 100%;
+          min-height: 100vh;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          padding: 15px;
+          background: #e9faff;
+        }
+
+        .p-l-55 {padding-left: 55px;}
+        .p-r-55 {padding-right: 55px;}
+        .p-b-50 {padding-bottom: 50px;}
+        .p-b-33 {padding-bottom: 33px;}
+        .m-t-20 {margin-top: 20px;}
+        .p-t-45 {padding-top: 45px;}
+        .p-b-4 {padding-bottom: 4px;}
+        .m-l-75 {margin-left: 75px;}
+
+        .wrap-login100 {
+          width: 500px;
+          background: #fff;
+          border-radius: 10px;
+          overflow: hidden;
+        }
+
+        /*==================================================================
+        [ Form ]*/
+
+        .login100-form {
+          width: 100%;
+        }
+
+        .login100-form-title {
+          display: block;
+          font-family: OpenSans-Regular;
+          font-size: 30px;
+          color: #555555;
+          line-height: 1.2;
+          text-align: center;
+        }
+
+        /*------------------------------------------------------------------
+        [ Input ]*/
+
+        .wrap-input100 {
+          width: 100%;
+          position: relative;
+          background-color: #fff;
+          border: 1px solid #e6e6e6;
+        }
+
+        .wrap-input100.rs1 {
+          border-top: none;
+        }
+
+        .input100 {
+          display: block;
+          width: 100%;
+          background: transparent;
+          font-family: OpenSans-Regular;
+          font-size: 15px;
+          color: #666666;
+          line-height: 1.2;
+        }
+
+        /*---------------------------------------------*/
+        input.input100 {
+          height: 68px;
+          padding: 0 25px 0 25px;
+        }
+
+        /*------------------------------------------------------------------
+        [ Focus Input ]*/
+
+        .focus-input100-1,
+        .focus-input100-2 {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          pointer-events: none;
+        }
+
+        .focus-input100-1::before,
+        .focus-input100-2::before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 0;
+          height: 1px;
+          background-color: #4272d7;
+        }
+
+        .focus-input100-1::before {
+          top: -1px;
+          left: 0;
+        }
+
+        .focus-input100-2::before {
+          bottom: -1px;
+          right: 0;
+        }
+
+        .focus-input100-1::after,
+        .focus-input100-2::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 1px;
+          height: 0;
+          background-color: #4272d7;
+        }
+
+        .focus-input100-1::after {
+          top: 0;
+          right: -1px;
+        }
+
+        .focus-input100-2::after {
+          bottom: 0;
+          left: -1px;
+        }
+
+        /*------------------------------------------------------------------
+        [ Button ]*/
+        .container-login100-form-btn {
+          width: 100%;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        .login100-form-btn, .login50-form-btn {
+          justify-content: center;
+          align-items: center;
+          height: 60px;
+          background-color: #4272d7;
+
+          font-family: OpenSans-Regular;
+          font-size: 14px;
+          color: #fff;
+          line-height: 1.2;
+          text-transform: uppercase;
+        }
+
+        .login100-form-btn {
+          padding: 0 20px;
+          width: 100%;
+        }
+
+        .login50-form-btn {
+          padding: 0 20px;
+          width: 40%;
+        }
+
+        .login50-form-btn:hover {
+          background-color: #333333;
+        }
+
+        .login100-form-btn:hover {
+          background-color: #333333;
+        }
+
+        .validate-input {
+          position: relative;
+        }
+        </style>
+    </head>
+
+    <body class="container">
+        <div id="root"></div>
+    </body>
+
+</html>
